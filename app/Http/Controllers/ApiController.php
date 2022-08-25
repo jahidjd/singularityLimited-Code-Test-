@@ -56,7 +56,7 @@ class ApiController extends Controller
         //     ], 401);
         // }
 
-        $user = Auth::user();
+        $user = User::where('email',$request->email)->first();
         return response()->json([
                 'status' => 'success',
                 'user' => $user,
